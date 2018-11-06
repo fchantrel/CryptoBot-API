@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_PATH}/logfile.log</file>
+        <append>true</append>
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <fileNamePattern>logfile.%i.log.zip</fileNamePattern>
+            <minIndex>1</minIndex>
+            <maxIndex>3</maxIndex>
+        </rollingPolicy>
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <maxFileSize>10MB</maxFileSize>
+        </triggeringPolicy>
+        <encoder>
+            <!--<pattern>%-4relative [%thread] %-5level %logger{35} - %msg %n</pattern>-->
+			<pattern>%d %-5level [%thread] %class{36}.%M %L - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="fr.fchantrel" level="INFO" />
+    
+    <root level="WARN">
+<!-- 		<appender-ref ref="CONSOLE" /> -->
+		<appender-ref ref="FILE" />
+	</root>
+</configuration>

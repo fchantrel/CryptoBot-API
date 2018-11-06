@@ -1,2 +1,2 @@
-# CryptoBot-API
-API de gestion de portefeuille de cryptomonnaies
+# Cryptobot-API
+API Rest / JSON pour consulter son portefeuille, enregistrer les cotations, passer des ordres manuellement, automatiser les ordres d'achat/vente, etc ...
